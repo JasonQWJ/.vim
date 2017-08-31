@@ -1,0 +1,5 @@
+local.vim
+plugins/plugged/*
+bundle
+plugged
+.*.swp
