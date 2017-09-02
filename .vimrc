@@ -265,6 +265,7 @@ set cursorline    " 高亮显示当前 - 行
 set cursorcolumn  " 高亮显示当前 - 列
 set hlsearch      " 高亮显示搜索结果
 set nocompatible  " 不要使用vi的键盘模式，而是vim自己的 
+set backspace=indent,eol,start
 " set encoding=utf-8
 
 " 在处理未保存或只读文件的时候，弹出确认 
@@ -437,7 +438,7 @@ nnoremap <Leader>ilt :TagbarToggle<CR>
 " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
 
 " 自动更新标签
-autocmd BufWritePost *.c,*.h,*.cpp,*.py,*.html,*.css,*.md,*.php call UpdateCtags()
+autocmd BufWritePost *.py,*.html,*.css,*.md,*.php call UpdateCtags()
 
 function! UpdateCtags()
     let curdir=getcwd()
@@ -448,7 +449,7 @@ function! UpdateCtags()
         endif
     endwhile
     if filewritable("./tags")
-        !ctags -R --file-scope=yes --langmap=c:+.h --languages=c,c++ --links=yes --c-kinds=+p --c++-kinds=+p --fields=+iaS --extra=+q
+        !ctags -R 
         TlistUpdate
     endif
     execute ":cd " . curdir
