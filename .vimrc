@@ -76,6 +76,7 @@ Plug 'tomasr/molokai'
 " Plug 'vim-scripts/phd'
 
 
+
 " 美化状态栏
 " Plug 'Lokaltog/vim-powerline'
 
@@ -437,23 +438,7 @@ let g:tagbar_compact=1                 " tagbar 子窗口中不显示冗余帮�
 nnoremap <Leader>ilt :TagbarToggle<CR> 
 " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
 
-" 自动更新标签
-autocmd BufWritePost *.py,*.html,*.css,*.md,*.php call UpdateCtags()
 
-function! UpdateCtags()
-    let curdir=getcwd()
-    while !filereadable("./tags")
-        cd ..
-        if getcwd() == "/"
-            break
-        endif
-    endwhile
-    if filewritable("./tags")
-        !ctags -R 
-        TlistUpdate
-    endif
-    execute ":cd " . curdir
-  endfunction
 
 " 设置 ctags 对哪些代码标识符生成标签
 let g:tagbar_type_css = {
