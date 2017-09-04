@@ -63,7 +63,6 @@ set mouse=a         " 设置鼠标滚动
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>插件安装>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 " plug 环境设置
-filetype off
 " set rtp+=~/.vim/plugged
 " vim-plug 管理的插件列表必须位于 plug#begin() 和 plug#end() 之间
 " 制定插件安装目录 (for Neovim: ~/.local/share/nvim/plugged)
@@ -173,7 +172,7 @@ Plug 'sjl/gundo.vim'
 " 快速移动，两次 `<leader>` 作为前缀键
 Plug 'Lokaltog/vim-easymotion'
 
-" 编辑 markdown 文档，自动开启 firefox 为你显示 markdown 最终效果
+" 编辑 markdown 文档，自动开启浏览器为你显示 markdown 最终效果
 Plug 'suan/vim-instant-markdown'
 
 " 中/英输入平滑切换
