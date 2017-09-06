@@ -812,8 +812,8 @@ let g:instant_markdown_allow_unsafe_content = 1
 " 异步git相关
 nnoremap <Leader>gad :AsyncRun git add .<cr>
 nnoremap <Leader>gcm :!git commit<cr>
-nnoremap <Leader>gph :!git push<cr>
-nnoremap <Leader>gul :!git pull<cr>
+nnoremap <Leader>gph :AsyncRun git push<cr>
+nnoremap <Leader>gul :AsyncRun git pull<cr>
 
 " 开关quickfix窗口
 nnoremap <Leader>qft :call asyncrun#quickfix_toggle(8)<cr>
