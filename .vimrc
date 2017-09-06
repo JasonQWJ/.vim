@@ -11,6 +11,10 @@ filetype plugin on  " 根据侦测到的不同类型加载对应的插件
 
 
 
+
+
+
+
 " >>>=========vim 自身（非插件）快捷键============
 " 
 
@@ -820,3 +824,16 @@ nnoremap <Leader>qft :call asyncrun#quickfix_toggle(8)<cr>
 
 " 编辑vim设置
 :nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" 新建markdown文件自动加入head
+nnoremap <Leader>nwf :call SetHeader()<cr>
+function! SetHeader()
+  if expand("%:e") == 'markdown' || expand("%:e") == 'md'
+    call setline(1, '---')
+    call append(1, 'layout: post')
+    call append(2, 'title: '.expand("%:t:r"))
+    call append(3, 'categories: ')
+    call append(4, '---')
+  endif
+endfunction
+
